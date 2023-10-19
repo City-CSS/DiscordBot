@@ -1,0 +1,11 @@
+version: '3'
+services:
+  bot:
+    container_name: DiscordCSS
+    build: .
+    environment:
+      - DISCORD_TOKEN=your-discord-token
+    volumes:
+      - .:/usr/src
+    ports:
+      - "3000:3000"
