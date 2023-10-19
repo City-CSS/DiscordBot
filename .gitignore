@@ -1,2 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/vcs.xml
+/modules.xml
+/DiscordBotCSS.iml
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
+.idea/
 .env
 config.json
