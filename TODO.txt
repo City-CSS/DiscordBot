@@ -1,3 +1,0 @@
-ChatGPT implementation
-Delete messages/clear txt channel
-Webscrapper to retrieve student numbers and discord handles
