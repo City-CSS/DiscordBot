@@ -20,8 +20,7 @@ const client = new Client({
 });
 
 (() => {
-    mongoose.connect('mongodb://127.0.0.1:27017/discordJS');
-
+    mongoose.connect('mongodb://127.0.0.1:27017/discordJS/');
     eventHandler(client);
     
     //login the bot
