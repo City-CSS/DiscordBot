@@ -4,7 +4,7 @@ const UsersDB = require('../models/Users');
 const mongoose = require('mongoose');
 
 let URL2 = "https://www.citystudents.co.uk/sso/login.ashx?ReturnUrl=/organisation/memberlist/55351/";
-l = async () => {
+module.exports = async () => {
     // Start a Puppeteer session with:
     // - a visible browser (`headless: false` - easier to debug because you'll see the browser in action)
     // - no default viewport (`defaultViewport: null` - website page will in full width and height)
@@ -37,7 +37,7 @@ l = async () => {
 
         return Array.from(userList).map((user) => {
             
-            const name = user.querySelector("tr > td:nth-child(1)").innerText;
+            const name = user.querySelector("tr > td:nth-child(1)").innerText.toUpperCase();
             const ID = user.querySelector("tr > td:nth-child(2)").innerText;
 
             return { name, ID };
@@ -50,7 +50,7 @@ l = async () => {
 
       return Array.from(userList).map((user) => {
           
-          const name = user.querySelector("tr > td:nth-child(1)").innerText;
+          const name = user.querySelector("tr > td:nth-child(1)").innerText.toUpperCase();
           const ID = user.querySelector("tr > td:nth-child(2)").innerText;
 
           return { name, ID };
@@ -66,8 +66,6 @@ l = async () => {
   for(var user in finalArray){
     let userTEMP = await UsersDB.findOne({userId : finalArray[user].ID})
     let username = finalArray[user].name.split(", ");
-      
-    
     
     console.log(username);
     if(!userTEMP){
@@ -82,6 +80,5 @@ l = async () => {
       await userTEMP.save();
     }
   }
+  mongoose.connection.close();
 };
-
-l();
