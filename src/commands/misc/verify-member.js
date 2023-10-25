@@ -51,10 +51,13 @@ module.exports = {
                 await Users.updateOne(filter, updateDoc);
                 console.log("You are a member now!");
                 
+                await interaction.member.roles.add('1163416038558400572');
                 interaction.reply({
                     content: "You are a member now!",
                     ephemeral:true,
                 });
+
+
             }
             
 
@@ -76,10 +79,12 @@ module.exports = {
         {
             name: 'first-name',
             description: 'Your first name, as written on the Student Union website.',
+            required: true,
             type: ApplicationCommandOptionType.String,
         },{
             name: 'surname',
             description: 'Your surname, as written on the Student Union website.',
+            required: true,
             type: ApplicationCommandOptionType.String,
         },
     ],

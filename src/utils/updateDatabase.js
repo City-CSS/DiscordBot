@@ -80,5 +80,4 @@ module.exports = async () => {
       await userTEMP.save();
     }
   }
-  mongoose.connection.close();
 };
