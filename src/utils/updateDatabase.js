@@ -12,6 +12,7 @@ module.exports = async () => {
       {
         headless:"new",
         defaultViewport:null,
+        executablePath: '/usr/bin/chromium-browser',
       }
     );
   
