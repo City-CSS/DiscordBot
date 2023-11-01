@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npx npm-force-resolutions",
+    "install": "npm install",
+    "setup": "npm run preinstall && npm install",
+    "run": "node src/index.js"
+  },
+  "resolutions": {
+    "undici": "5.26.4"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +21,7 @@
     "dotenv": "^16.3.1",
     "mongodb": "^6.1.0",
     "mongoose": "^7.6.2",
+    "npm-force-resolutions": "^0.0.10",
     "puppeteer": "^21.3.8",
     "undici": "^5.26.4"
   }
