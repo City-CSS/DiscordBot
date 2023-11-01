@@ -34,5 +34,5 @@ TBD
 ### TODOs:
 
 - [ ] ChatGPT implementation
-- [ ] Delete messages/clear txt channel
-- [ ] Webscrapper to retrieve student numbers and discord handles
+- [ ] Delete messages/clear txt channel [v]
+- [ ] Webscrapper to retrieve student numbers and discord handles [v]
